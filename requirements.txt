@@ -1,0 +1,7 @@
+langchain
+lanchain-community
+streamlit
+groq
+python dot-env
+langachain-groq
+beautifulsoup4 #extracting the data from a website through html parser
