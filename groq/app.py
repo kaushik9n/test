@@ -5,6 +5,8 @@ import streamlit as st
 import os
 from dotenv import load_dotenv
 
+load_dotenv()
+
 groq_api_key=os.getenv("GROQ_API_KEY")
 
 ## Prompt Template
@@ -23,10 +25,11 @@ input_text=st.text_input("Search the topic u want")
 
 # openAI LLm 
 llm=ChatGroq(groq_api_key=groq_api_key,
-             model_name="mixtral-8x7b-32768")
+             model_name="llama-3.3-70b-versatile")
 output_parser=StrOutputParser()
 chain=prompt|llm|output_parser
 
 if input_text:
     st.write(chain.invoke({'question':input_text}))
+    
     
